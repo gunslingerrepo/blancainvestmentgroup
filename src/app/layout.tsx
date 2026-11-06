@@ -16,7 +16,10 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: [
+    "Blanca Investment Group",
     "Blanca Investment Limited",
+    "Blanca Investment",
+    "Blanca Investment Abuja",
     "solar installation Abuja",
     "renewable energy Nigeria",
     "property management Abuja",

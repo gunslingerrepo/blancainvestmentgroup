@@ -20,12 +20,26 @@ export function pageMetadata({ title, description, path }: { title: string; desc
   };
 }
 
+/** Tells Google the site's preferred name for search results. */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    name: site.groupName,
+    alternateName: [site.name, site.shortName],
+    url: `${site.url}/`,
+    publisher: { "@id": `${site.url}/#organization` },
+  };
+}
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${site.url}/#organization`,
     name: site.name,
+    alternateName: [site.groupName, site.shortName],
     url: site.url,
     logo: `${site.url}/brand/logo.png`,
     image: `${site.url}/opengraph-image.jpg`,

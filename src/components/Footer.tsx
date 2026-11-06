@@ -59,7 +59,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col gap-4 py-6 text-[0.8rem] text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>© {year} {site.name}. All rights reserved.</p>
+          <p>© {year} {site.name} ({site.groupName}). All rights reserved.</p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             <li><Link href="/privacy-policy" className="link-underline hover:text-white">Privacy Policy</Link></li>
             <li><Link href="/terms-of-service" className="link-underline hover:text-white">Terms of Service</Link></li>

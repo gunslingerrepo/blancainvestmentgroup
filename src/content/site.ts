@@ -10,7 +10,9 @@
 export const site = {
   name: "Blanca Investment Limited",
   shortName: "Blanca Investment",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://blancainvestmentgroup.com").replace(/\/$/, ""),
+  /** Trading name used on the web domain; included so searches for it find the site. */
+  groupName: "Blanca Investment Group",
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.blancainvestmentgroup.com").replace(/\/$/, ""),
   tagline: "Building a Sustainable Future for Nigeria",
   description:
     "Blanca Investment Limited is an Abuja-based Nigerian company delivering renewable energy, real estate and property management, building construction, office supplies and procurement, and automation and ICT services.",

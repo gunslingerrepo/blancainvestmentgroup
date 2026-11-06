@@ -6,16 +6,16 @@ import CtaBand from "@/components/CtaBand";
 import ProjectCard from "@/components/ProjectCard";
 import Partners from "@/components/Partners";
 import { img, productGroups, projects, services, site, stats } from "@/content/site";
-import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+import { organizationJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
 
 export const metadata = {
   ...pageMetadata({
     title: "Renewable Energy, Real Estate & Construction in Nigeria",
     description:
-      "Blanca Investment Limited, Abuja: solar and renewable energy, real estate and property management, building construction, office supplies and procurement, and automation and ICT services across Nigeria.",
+      "Blanca Investment Group (Blanca Investment Limited), Abuja: solar and renewable energy, real estate and property management, building construction, office supplies and procurement, and automation and ICT services across Nigeria.",
     path: "/",
   }),
-  title: { absolute: `${site.name} | Building a Sustainable Future for Nigeria` },
+  title: { absolute: `${site.groupName} | ${site.name}, Abuja` },
 };
 
 const overviewPoints = [
@@ -35,6 +35,7 @@ export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }} />
 
       {/* ───────── HERO ───────── */}
       <section className="relative isolate flex min-h-[calc(100svh-76px)] flex-col overflow-hidden bg-ink text-white lg:min-h-[calc(100svh-124px)]">
