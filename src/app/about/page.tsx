@@ -136,7 +136,7 @@ export default function AboutPage() {
               <p className="eyebrow text-muted reveal">Meet our team</p>
               <h2 id="team-title" className="reveal mt-5 text-4xl font-semibold leading-[1.05] sm:text-5xl">How Blanca is organized</h2>
             </div>
-            <p className="reveal text-[1.02rem] leading-relaxed text-muted lg:col-span-5">Seven divisions report to our General Manager, each with a clear lead, so every client has a direct line to the people doing the work.</p>
+            <p className="reveal text-[1.02rem] leading-relaxed text-muted lg:col-span-5">Seven divisions report to our General Manager Operations, each with a clear lead, so every client has a direct line to the people doing the work.</p>
           </div>
           <OrgChart />
           <Link href="/contact" className="btn btn-outline reveal mt-14">Work with us <ArrowRight className="size-4" /></Link>

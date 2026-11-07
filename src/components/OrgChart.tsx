@@ -5,7 +5,7 @@ const Stem = ({ className = "h-8" }: { className?: string }) => <span className=
 
 /** Text-only organization chart: board, executives, then divisions. */
 export default function OrgChart() {
-  const [md, gm] = leadership.executives;
+  const [md, gm, agm] = leadership.executives;
   return (
     <div className="mt-14 lg:mt-20">
       {/* Leadership spine */}
@@ -28,6 +28,11 @@ export default function OrgChart() {
         <div className="reveal border border-ink px-6 py-6">
           <p className="font-display text-2xl font-semibold">{gm.name}</p>
           <p className="mt-1 text-sm text-muted">{gm.role}</p>
+        </div>
+        <Stem />
+        <div className="reveal mx-auto w-full max-w-lg border border-line bg-mist px-6 py-5">
+          <p className="font-display text-xl font-semibold">{agm.name}</p>
+          <p className="mt-1 text-sm text-muted">{agm.role}</p>
         </div>
         <Stem className="h-10" />
       </div>

@@ -188,7 +188,8 @@ export const leadership = {
   board: { title: "Board of Directors", names: ["Muhammad Hassan Bello", "Maigona Nasiru Umar"], text: "Overall governance and strategic direction" },
   executives: [
     { name: "Muhammad Hassan Bello", role: "Managing Director / CEO" },
-    { name: "Khalifa Hassan", role: "General Manager" },
+    { name: "Khalifa Hassan", role: "General Manager Operations" },
+    { name: "Baffa Hassan Bello", role: "Assistant General Manager Operations" },
   ],
 };
 
