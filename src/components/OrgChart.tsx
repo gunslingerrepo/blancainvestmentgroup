@@ -47,7 +47,6 @@ export default function OrgChart() {
                   <li key={m.name + m.role} className="px-6 py-4">
                     <p className={`font-display font-medium ${m.name === "To be assigned" ? "text-muted" : "text-ink"}`}>{m.name}</p>
                     <p className="text-sm font-medium text-brand">{m.role}</p>
-                    {m.text && <p className="mt-1 text-[0.85rem] leading-relaxed text-muted">{m.text}</p>}
                   </li>
                 ))}
               </ul>

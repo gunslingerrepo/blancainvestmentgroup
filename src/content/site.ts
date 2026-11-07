@@ -177,7 +177,7 @@ export const additionalServices = [
 /** Company statistics (confirmed by Blanca Investment Limited). */
 export const stats: { value: string; label: string; verified: boolean }[] = [
   { value: "348", label: "Projects delivered", verified: true },
-  { value: "6", label: "Years of experience", verified: true },
+  { value: "4", label: "Years of experience", verified: true },
   { value: "207", label: "Clients served", verified: true },
   { value: "05", label: "Core business sectors", verified: true },
 ];
@@ -188,7 +188,7 @@ export const leadership = {
   board: { title: "Board of Directors", names: ["Muhammad Hassan Bello", "Maigona Nasiru Umar"], text: "Overall governance and strategic direction" },
   executives: [
     { name: "Muhammad Hassan Bello", role: "Managing Director / CEO" },
-    { name: "Khalifa Hassan", role: "General Manager / COO" },
+    { name: "Khalifa Hassan", role: "General Manager" },
   ],
 };
 
@@ -200,45 +200,45 @@ export const divisions: OrgDivision[] = [
     title: "Operations & Logistics",
     head: "Head of Operations",
     members: [
-      { name: "Owiri Glory", role: "Logistics & Procurement", text: "Procurement activities, deliveries and logistics." },
-      { name: "Umar Lawan", role: "Storekeeper / Logistics", text: "Store records, stock control, inventory and logistics." },
-      { name: "Owiri Glory", role: "Inventory Management & Procurement", text: "Inventory control, procurement and supply chain management." },
+      { name: "Owiri Glory", role: "Logistics & Procurement" },
+      { name: "Umar Lawan", role: "Storekeeper / Logistics" },
+      { name: "Owiri Glory", role: "Inventory Management & Procurement" },
     ],
   },
   {
     title: "Technical & Projects",
     head: "Head of Projects",
     members: [
-      { name: "Mustapha Ayuba", role: "Project Supervisor", text: "Project activities, work progress and reporting." },
-      { name: "Rayyan", role: "Site Foreman", text: "Site workers and daily site activities." },
+      { name: "Mustapha Ayuba", role: "Project Supervisor" },
+      { name: "Rayyan", role: "Site Foreman" },
       { name: "Umar Paki", role: "Standby Electrician" },
       { name: "Ado Pali", role: "Standby Electrician" },
-      { name: "Nuhu Agyo", role: "Corps Member / Electrician", text: "Electrical installation, maintenance and support." },
-      { name: "Hafiz Kabir", role: "Corps Member / Architect", text: "Architectural drawings, design support and BOQ assistance." },
-      { name: "Nasiru Shuaibu", role: "Research & Development", text: "Research, technical analysis and new solutions." },
+      { name: "Nuhu Agyo", role: "Corps Member / Electrician" },
+      { name: "Hafiz Kabir", role: "Corps Member / Architect" },
+      { name: "Nasiru Shuaibu", role: "Research & Development" },
     ],
   },
   {
     title: "Sales & Marketing",
     head: "Head of Sales & Marketing",
     members: [
-      { name: "Janet Zubairu", role: "Marketing", text: "Marketing campaigns, customer engagement and brand promotion." },
-      { name: "Abdulrasheed Abubakar", role: "Media & Content Creator", text: "Content, photography, videography, editing and social media." },
+      { name: "Janet Zubairu", role: "Marketing" },
+      { name: "Abdulrasheed Abubakar", role: "Media & Content Creator" },
     ],
   },
   {
     title: "Finance & Administration",
     head: "Head of Finance & Administration",
     members: [
-      { name: "Glory Owiri & Hassan Rajiola", role: "Accounts / Finance / Bills", text: "Accounting, finance, bills and financial records." },
-      { name: "Tope Wosila Comfort", role: "Administration / HR", text: "HR, staff records, recruitment, employee relations and administration." },
-      { name: "Tope Wosila Comfort", role: "Salary / Vouchers", text: "Payroll and vouchers management." },
+      { name: "Glory Owiri & Hassan Rajiola", role: "Accounts / Finance / Bills" },
+      { name: "Tope Wosila Comfort", role: "Administration / HR" },
+      { name: "Tope Wosila Comfort", role: "Salary / Vouchers" },
     ],
   },
   {
     title: "Quality, Safety & Compliance",
     head: "Head of Quality & Compliance",
-    members: [{ name: "Site Supervisors", role: "Safety & Compliance (collectively)", text: "Site safety, compliance and quality standards." }],
+    members: [{ name: "Site Supervisors", role: "Safety & Compliance (collectively)" }],
   },
   {
     title: "Corporate Planning & Coordination",
@@ -248,7 +248,7 @@ export const divisions: OrgDivision[] = [
   {
     title: "Graphics & ICT Support",
     head: "Head of Graphics & ICT",
-    members: [{ name: "Oyelude Abiodun", role: "Graphics & ICT", text: "Design, digital materials, IT support and maintenance." }],
+    members: [{ name: "Oyelude Abiodun", role: "Graphics & ICT" }],
   },
 ];
 
@@ -274,6 +274,7 @@ export type Project = {
   features: string[];
   gallery: ProjectImage[];
   floorPlan?: ProjectImage;
+  brochure?: { href: string; label: string; size: string };
   pricing?: { note: string; rows: PriceRow[] };
 };
 
@@ -323,20 +324,24 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "proposed-residential-estate-abuja",
-    name: "Proposed Residential Estate, Abuja",
-    shortName: "Residential Estate, Abuja",
-    status: "proposed",
-    location: "Abuja, FCT",
+    slug: "residential-estate-apo",
+    name: "Residential Estate, Apo",
+    shortName: "Residential Estate, Apo",
+    status: "ongoing",
+    badge: "Now selling",
+    location: "Plot 60, Cadastral Zone D03, Apo, Abuja",
     type: "Gated residential estate",
-    summary: "A planned gated community of apartment blocks and terraced homes along landscaped, palm-lined streets.",
+    summary: "A gated community of apartment blocks and terraced homes along landscaped, palm-lined streets, now under construction and selling.",
+    brochure: { href: "/downloads/Blanca-Residential-Estate-Brochure.pdf", label: "Download estate brochure", size: "PDF, 29 MB" },
     description: [
-      "A proposed gated residential estate in Abuja that brings together three-storey apartment blocks and terraced homes, arranged along wide, landscaped streets lined with palms.",
-      "The estate is planned around a secure gatehouse entrance, off-street parking and generous green space, with a modern palette of white render, textured stone and dark brick.",
+      "A gated residential estate in Apo, Abuja, being developed with our partner Besab Homes Limited. It brings together three-storey apartment blocks and terraced homes, arranged along wide, landscaped streets lined with palms.",
+      "Construction is ongoing and homes are now selling. The estate is planned around a secure gatehouse entrance, off-street parking and generous green space, with a modern palette of white render, textured stone and dark brick.",
     ],
     facts: [
-      ["Status", "Proposed"],
-      ["Location", "Abuja, FCT"],
+      ["Status", "Ongoing, now selling"],
+      ["Location", "Apo, Abuja, FCT"],
+      ["Plot", "Plot 60, Cadastral Zone D03"],
+      ["Partner", "Besab Homes Limited"],
       ["Type", "Gated residential estate"],
       ["Homes", "Apartment blocks and terraced houses"],
     ],
@@ -349,6 +354,8 @@ export const projects: Project[] = [
     ],
     gallery: [
       { src: "/images/projects/estate-blocks.jpg", alt: "Three-storey apartment blocks in white render and grey brick along an estate road", caption: "Apartment blocks" },
+      { src: "/images/projects/estate-construction-progress-1.jpg", alt: "Aerial view of two-storey blocks under construction with bamboo scaffolding and workers on site", caption: "Construction progress on site" },
+      { src: "/images/projects/estate-construction-progress-2.jpg", alt: "Three-storey apartment block under construction with bamboo scaffolding and rendered walls", caption: "Apartment block under construction" },
       { src: "/images/projects/estate-street.jpg", alt: "Palm-lined estate road with modern white terraced homes and parked cars on both sides", caption: "Site layout, estate road" },
       { src: "/images/projects/estate-gate.jpg", alt: "Gated estate entrance with a central gatehouse, timber-slat gates and pergola canopies", caption: "Estate entrance and gatehouse" },
       { src: "/images/projects/estate-block-parking.jpg", alt: "Apartment block in beige render and blue-grey brick with cars parked in front", caption: "Apartment block and parking" },
@@ -409,3 +416,19 @@ export const partners = [
   { name: "Besab Homes Limited", logo: "/brand/partner-besab-homes.png", width: 409, height: 166 },
 ];
 
+/* ───────────── Downloads (supplied by Blanca Investment Limited, unaltered) ───────────── */
+
+export const downloads = [
+  {
+    title: "Projects Catalogue",
+    text: "Solar and inverter installations we have delivered, with the technical specification of each system.",
+    href: "/downloads/Blanca-Projects-Catalogue.pdf",
+    meta: "PDF, 18 pages, 1.8 MB",
+  },
+  {
+    title: "Residential Estate Brochure",
+    text: "Renders, site layout and floor plans for the apartments and terraced homes at our residential estate in Apo, Abuja.",
+    href: "/downloads/Blanca-Residential-Estate-Brochure.pdf",
+    meta: "PDF, 36 pages, 29 MB",
+  },
+];

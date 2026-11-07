@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowRight, Check, FileDown, MapPin } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import ProjectsBrowser from "@/components/ProjectsBrowser";
@@ -13,7 +13,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Projects",
   description:
-    "Residential developments by Blanca Investment Limited in Abuja: three-bedroom flats with BQ at Apo, now selling, and a proposed gated residential estate.",
+    "Residential developments by Blanca Investment Limited in Abuja: three-bedroom flats with BQ and a gated residential estate at Apo, both under construction and now selling.",
   path: "/projects",
 });
 
@@ -59,12 +59,17 @@ function ProjectDetail({ project: p, index }: { project: Project; index: number 
                 <WhatsAppIcon className="size-4" /> WhatsApp
               </a>
             </div>
+            {p.brochure && (
+              <a href={p.brochure.href} download className="link-underline mt-6 inline-flex items-center gap-2 font-display text-sm font-medium hover:text-brand">
+                <FileDown className="size-4 text-brand" aria-hidden /> {p.brochure.label} <span className="font-normal text-muted">({p.brochure.size})</span>
+              </a>
+            )}
           </div>
         </div>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-14">
           <div className={`min-w-0 ${p.pricing ? "lg:col-span-5" : "lg:col-span-12"}`}>
-            <h3 className="font-display text-xl font-medium">{p.floorPlan ? "What each apartment offers" : "Planned features"}</h3>
+            <h3 className="font-display text-xl font-medium">{p.floorPlan ? "What each apartment offers" : "Estate features"}</h3>
             <ul className={`mt-6 grid gap-x-8 gap-y-3 ${p.pricing ? "" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
               {p.features.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-[0.95rem] leading-relaxed"><Check className="mt-1 size-4 shrink-0 text-brand" aria-hidden />{f}</li>
@@ -120,7 +125,7 @@ export default function ProjectsPage() {
         crumb="Projects"
         eyebrow="Portfolio"
         title={<>Homes we are <span className="text-brand">building</span> in Abuja</>}
-        intro="Residential developments by Blanca Investment Limited, from apartments now selling at Apo to a proposed gated estate."
+        intro="Residential developments by Blanca Investment Limited, from three-bedroom flats to a gated residential estate at Apo, both now selling."
         image="/images/projects/estate-blocks.jpg"
         imageAlt="Three-storey apartment blocks in white render and grey brick along an estate road"
       >

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, Check, ClipboardCheck, MessagesSquare, Truck, Wrench } from "lucide-react";
+import { ArrowRight, Check, ClipboardCheck, FileDown, MessagesSquare, Truck, Wrench } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ServicePhoto from "@/components/ServicePhoto";
 import ProductsCatalogue from "@/components/ProductsCatalogue";
 import CtaBand from "@/components/CtaBand";
-import { additionalServices, img, services } from "@/content/site";
+import { additionalServices, downloads, img, services } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -148,6 +148,20 @@ export default function ServicesPage() {
             </div>
             <p className="reveal text-[1.02rem] leading-relaxed text-muted lg:col-span-5">Choose a product to request prices and availability. We can supply on its own or as part of a full installation.</p>
           </div>
+          <ul className="mb-16 grid gap-4 md:grid-cols-2 lg:mb-20" aria-label="Downloads">
+            {downloads.map((d) => (
+              <li key={d.href} className="reveal">
+                <a href={d.href} download className="group flex h-full items-start gap-5 border border-line bg-mist p-6 transition-colors duration-[1200ms] hover:border-ink hover:bg-ink hover:text-white sm:p-8">
+                  <span className="grid size-14 shrink-0 place-items-center bg-brand text-white"><FileDown className="size-6" aria-hidden /></span>
+                  <span className="flex flex-1 flex-col">
+                    <span className="font-display text-xl font-medium">{d.title}</span>
+                    <span className="mt-2 text-[0.92rem] leading-relaxed text-muted transition-colors duration-[1200ms] group-hover:text-white/70">{d.text}</span>
+                    <span className="mt-4 inline-flex items-center gap-2 font-display text-sm font-medium text-brand group-hover:text-white">Download <span className="font-normal text-muted transition-colors duration-[1200ms] group-hover:text-white/60">{d.meta}</span></span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
           <ProductsCatalogue />
         </div>
       </section>
